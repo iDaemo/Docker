@@ -45,7 +45,6 @@ services:
       retries: 3
     restart: unless-stopped
   postgres:
-    env_file: stack.env
     image: postgres
     container_name: outline-postgres
     hostname: outline-postgres
@@ -56,7 +55,6 @@ services:
         - CMD
         - pg_isready
       interval: 30s
-    env_file: stack.env
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

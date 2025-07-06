@@ -11,6 +11,7 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file: stack.env
     environment:
       PGSSLMODE: disable
       SECRET_KEY: ${SECRET_KEY}
@@ -54,6 +55,7 @@ services:
         - CMD
         - pg_isready
       interval: 30s
+    env_file: stack.env
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

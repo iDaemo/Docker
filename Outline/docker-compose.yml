@@ -11,8 +11,8 @@ services:
     depends_on:
       - postgres
       - redis
-    env_file: stack.env
     environment:
+      env_file: stack.env
       PGSSLMODE: disable
       SECRET_KEY: ${SECRET_KEY}
       UTILS_SECRET: ${UTILS_SECRET}
@@ -45,6 +45,7 @@ services:
       retries: 3
     restart: unless-stopped
   postgres:
+    env_file: stack.env
     image: postgres
     container_name: outline-postgres
     hostname: outline-postgres

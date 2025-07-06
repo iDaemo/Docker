@@ -45,7 +45,7 @@ services:
     image: steveltn/https-portal
     env_file: stack.env
     ports:
-      - '8080:80'
+      - '8088:80'
       - '443:443'
     links:
       - outline

@@ -5,10 +5,10 @@ services:
     container_name: outline-app
     hostname: outline-app
     ports:
-      - 3000:3000
+      - 3030:3000
     volumes:
       - ./storage-data:/var/lib/outline/data
-    depends_on:
+    depends_on:1
       - postgres
       - redis
     environment:
